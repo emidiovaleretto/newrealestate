@@ -1,1 +1,1 @@
-web: gunicorn backend.core.wsgi:application
+web: cd backend && gunicorn backend.core.wsgi:application --workers=3 --log-file -

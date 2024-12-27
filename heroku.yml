@@ -5,4 +5,4 @@ build:
     - backend
 
 run:
-  web: gunicorn core.wsgi:application --log-file -
+  web: gunicorn core.wsgi:application --workers=3 --log-file -
