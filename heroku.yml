@@ -1,0 +1,8 @@
+build:
+  buildpacks:
+    - heroku/python
+  path:
+    - backend
+
+run:
+  web: gunicorn core.wsgi:application --log-file -
