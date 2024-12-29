@@ -5,6 +5,10 @@ class TestHome(TestCase):
         response = self.client.get("/")
         self.assertEqual(response.status_code, 200)
 
+    def test_home_page_returns_correct_template(self):
+        response = self.client.get("/")
+        self.assertTemplateUsed(response, "home/index.html")
+
     def test_home_page_contains_hello_world(self):
         response = self.client.get("/")
         self.assertContains(response, "Hello, World!")
